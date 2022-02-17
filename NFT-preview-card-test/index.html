@@ -43,7 +43,6 @@
         border-radius: 18px;
       }
       .nftImg {
-        position: flex;
         max-width: 50%;
         justify-content: center;
         display: inline-block;
@@ -54,7 +53,7 @@
       }
       .overlay {
         position: absolute;
-        top: 14%;
+        top: 16.05%;
         display: flex;
         width: 250px;
         height: 250px;
@@ -70,14 +69,14 @@
         opacity: 255;
         cursor: pointer;
       }
-      .content header h3 {
+      .content .header h3 {
         display: inline-block;
         color: hsl(0, 0%, 100%);
         padding: 18px 0px;
         letter-spacing: 1px;
       }
-      .content header > h3:hover,
-      footer .creator span:hover {
+      .content .header > h3:hover,
+      .footer .creator span:hover {
         color: hsl(178, 100%, 50%);
         cursor: pointer;
       }
@@ -102,24 +101,24 @@
         letter-spacing: 1px;
         font-weight: 600;
       }
-      footer {
+      .footer {
         display: flex;
         gap: 2.5vh;
         text-align: center;
         padding: 20px 20px 0px 0px;
       }
-      footer .photo {
+      .footer .photo {
         width: 15%;
         border: solid 2px hsl(0, 0%, 100%);
         border-radius: 50%;
       }
-      footer .creator {
+      .footer .creator {
         margin: 5px 0px;
       }
-      footer .creator span {
+      .footer .creator span {
         color: #fff;
       }
-      footer .circle {
+      .footer .circle {
         position: absolute;
         border: 2px solid #fff;
         width: 36px;
@@ -141,7 +140,7 @@
   <body>
     <main>
       <div class="nftImg">
-        <img src="/image-equilibrium.jpg" alt="" />
+        <img src="/image-equilibrium.jpg" alt="equilibrium" />
         <div class="overlay">
           <svg
             id="view-icon"
@@ -161,10 +160,10 @@
         </div>
       </div>
       <div class="content">
-        <header>
+        <div class="header">
           <h3>Equilibrium #3429</h3>
           <p>Our Equilibrium collection promotes balance and calm.</p>
-        </header>
+        </div>
         <div class="info">
           <div class="price">
             <svg
@@ -190,12 +189,12 @@
             <p>3 days left</p>
           </div>
         </div>
-        <hr color="#2c3e56" size="0.5vh" class="card_line" />
+        <hr style="color: #2c3e56" class="card_line" />
 
-        <footer class="footer">
+        <div class="footer">
           <img src="/image-avatar.png" class="photo" alt="" />
           <p class="creator">Creation of <span>Jules Wyvern</span></p>
-        </footer>
+        </div>
       </div>
     </main>
 
