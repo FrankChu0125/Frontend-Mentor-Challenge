@@ -7,11 +7,11 @@
       </div>
       <div class="content-card">
         <div class="title">
-          <h4 class="type">Work</h4>
+          <p class="type">Work</p>
           <img src="../assets/icon-ellipsis.svg" alt="ellipsis" />
         </div>
         <div class="info">
-          <h2>{{ this[nowClick]["Work"].used }}hrs</h2>
+          <p class="title">{{ this[nowClick]["Work"].used }}hrs</p>
           <p>Last week - {{ this[nowClick]["Work"].last }}hrs</p>
         </div>
       </div>
@@ -23,11 +23,11 @@
       </div>
       <div class="content-card">
         <div class="title">
-          <h4 class="type">Play</h4>
+          <p class="type">Play</p>
           <img src="../assets/icon-ellipsis.svg" alt="ellipsis" />
         </div>
         <div class="info">
-          <h2>{{ this[nowClick]["Play"].used }}hrs</h2>
+          <p class="title">{{ this[nowClick]["Play"].used }}hrs</p>
           <p>Last week - {{ this[nowClick]["Play"].last }}hrs</p>
         </div>
       </div>
@@ -39,11 +39,11 @@
       </div>
       <div class="content-card">
         <div class="title">
-          <h4 class="type">Study</h4>
+          <p class="type">Study</p>
           <img src="../assets/icon-ellipsis.svg" alt="ellipsis" />
         </div>
         <div class="info">
-          <h2>{{ this[nowClick]["Study"].used }}hrs</h2>
+          <p class="title">{{ this[nowClick]["Study"].used }}hrs</p>
           <p>Last week - {{ this[nowClick]["Study"].last }}hrs</p>
         </div>
       </div>
@@ -55,11 +55,11 @@
       </div>
       <div class="content-card">
         <div class="title">
-          <h4 class="type">Exercise</h4>
+          <p class="type">Exercise</p>
           <img src="../assets/icon-ellipsis.svg" alt="ellipsis" />
         </div>
         <div class="info">
-          <h2>{{ this[nowClick]["Exercise"].used }}hrs</h2>
+          <p class="title">{{ this[nowClick]["Exercise"].used }}hrs</p>
           <p>Last week - {{ this[nowClick]["Exercise"].last }}hrs</p>
         </div>
       </div>
@@ -71,11 +71,11 @@
       </div>
       <div class="content-card">
         <div class="title">
-          <h4 class="type">Social</h4>
+          <p class="type">Social</p>
           <img src="../assets/icon-ellipsis.svg" alt="ellipsis" />
         </div>
         <div class="info">
-          <h2>{{ this[nowClick]["Social"].used }}hrs</h2>
+          <p class="title">{{ this[nowClick]["Social"].used }}hrs</p>
           <p>Last week - {{ this[nowClick]["Social"].last }}hrs</p>
         </div>
       </div>
@@ -87,11 +87,11 @@
       </div>
       <div class="content-card">
         <div class="title">
-          <h4 class="type">Self Care</h4>
+          <p class="type">Self Care</p>
           <img src="../assets/icon-ellipsis.svg" alt="ellipsis" />
         </div>
         <div class="info">
-          <h2>{{ this[nowClick]["SelfCare"].used }}hrs</h2>
+          <p class="title">{{ this[nowClick]["SelfCare"].used }}hrs</p>
           <p>Last week - {{ this[nowClick]["SelfCare"].last }}hrs</p>
         </div>
       </div>
@@ -246,8 +246,9 @@ export default {
         align-items: center;
         width: 100%;
         padding-bottom: 20px;
-        h4 {
+        p {
           font-size: 18px;
+          color: #fff;
         }
         img {
           height: 5px;
@@ -255,10 +256,11 @@ export default {
         }
       }
       .info {
-        h2 {
+        .title {
           font-size: 2.5rem;
           font-weight: 200;
           padding-bottom: 10px;
+          color: #fff;
         }
         > p {
           font-size: 0.5rem;
