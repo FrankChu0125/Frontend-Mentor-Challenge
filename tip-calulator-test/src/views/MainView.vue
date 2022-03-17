@@ -18,42 +18,42 @@
             type="number"
             name="amount"
             placeholder="0"
+            v-model.trim="billInputs"
           />
         </div>
         <!-- select tip -->
         <div class="selectTip">
           <h3>Select Tip %</h3>
           <div class="button">
-            <button class="btn active" id="5" onclick="tipclicked(this)">
+            <button class="btn active" id="5" @click="tipClicked(5)">
               <p>5%</p>
             </button>
-            <button class="btn" id="10" onclick="tipclicked(this)">
+            <button class="btn" id="10" @click="tipClicked(10)">
               <p>10%</p>
             </button>
-            <button class="btn" id="15" onclick="tipclicked(this)">
+            <button class="btn" id="15" @click="tipClicked(15)">
               <p>15%</p>
             </button>
-            <button class="btn" id="25" onclick="tipclicked(this)">
+            <button class="btn" id="25" @click="tipClicked(25)">
               <p>25%</p>
             </button>
-            <button class="btn" id="50" onclick="tipclicked(this)">
+            <button class="btn" id="50" @click="tipClicked(50)">
               <p>50%</p>
             </button>
-            <button class="btn" id="custom">
-              <p>custom</p>
-              <!-- <input
+            <div class="btn">
+              <input
                 type="number"
-                class="hide custom_box"
-                placeholder="0"
-                oninput="formSelect(this)"
-              /> -->
-            </button>
+                class="input custom_box"
+                placeholder="Custom"
+                v-model.trim="selectTip"
+              />
+            </div>
           </div>
         </div>
         <!-- people -->
         <div class="inputGroup">
           <h3>Number of People</h3>
-          <p class="erroPeopleMsg">Can't be zero</p>
+          <p class="erroPeopleMsg">{{ erroPeopleMsg }}</p>
         </div>
         <div class="input">
           <img src="../assets/icon-person.svg" alt="people-icon" />
@@ -62,7 +62,7 @@
             name="people"
             class="amount-box"
             placeholder="0"
-            oninput="formChange(this)"
+            v-model="peopleInputs"
           />
         </div>
       </div>
@@ -84,11 +84,11 @@
             <p class="person">/ person</p>
           </div>
           <div class="value">
-            <p>$0.00</p>
+            <p>{{ caluTipAmount }}</p>
           </div>
         </div>
 
-        <div class="reset-button">
+        <div class="reset-button" @click="reset">
           <p>RESET</p>
         </div>
       </div>
@@ -99,6 +99,54 @@
 <script>
 export default {
   name: "MainView",
+  data() {
+    return {
+      billInputs: 0,
+      selectTip: 0,
+      peopleInputs: 0,
+      erroPeopleMsg: "",
+      tipAmount: 0,
+      total: 0,
+    };
+  },
+  // update() {
+  //   if (!billInputs) {
+  //     erroPeopleMsg = "Can't be empty";
+  //   }
+  //   if (billInputs < 0) {
+  //     erroPeopleMsg = "Can't be negative ";
+  //   }
+  // },
+  methods: {
+    tipClicked(getInput) {
+      this.selectTip = getInput;
+    },
+    reset() {
+      this.billInputs = 0;
+      this.selectTip = 0;
+      this.peopleInputs = 0;
+      this.erroPeopleMsg = "";
+    },
+  },
+  computed: {
+    caluTipAmount() {
+      if (this.tipAmount !== 0 || this.peopleInputs !== 0) {
+        this.tipAmount = 0;
+
+      } else {
+        this.tipAmount = 0;
+      }
+      return this.tipAmount;
+      // if (!(amount.value == 0 || people.value == 0)) {
+      //   tip_amount = (parseInt(amount.value) * percentage) / 100 / people.value;
+      //   total = parseInt(amount.value) + (amount.value * percentage) / 100;
+      //   total = total / people.value; // calculate total per person
+      // } else {
+      //   tip_amount = 0;
+      //   total = 0;
+      // }
+    },
+  },
 };
 </script>
 
@@ -151,7 +199,7 @@ input[type="number"] {
         text-align: right;
         font-size: 20px;
         padding-right: 10px;
-        background-color: #c5e4e7;
+        background-color: #f3f8fb;
         border: solid 1px #fff;
         border-radius: 5px;
         color: #00474b;
@@ -160,7 +208,7 @@ input[type="number"] {
       input:hover,
       input:focus {
         outline: none;
-        border: solid 3px hsl(172, 67%, 45%);
+        border: solid 3px hsl(183, 100%, 15%);
       }
     }
     .left {
@@ -191,6 +239,22 @@ input[type="number"] {
             border-radius: 5px;
             border: 0px;
             cursor: pointer;
+            input {
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              border-radius: 5px;
+              outline: none;
+              border: 2px solid #f3f8fb;
+              background-color: #f3f8fb;
+              font-size: 20px;
+              font-weight: bold;
+              color: hsl(183, 100%, 15%);
+            }
+            input:hover {
+              outline: none;
+              border: 3px solid hsl(183, 100%, 15%);
+            }
             p {
               color: #fff;
               font-size: 20px;
@@ -198,10 +262,13 @@ input[type="number"] {
             }
           }
           .btn:hover {
-            background-color: #9fe8df;
+            background-color: #24c3ad;
             p {
               color: hsl(183, 100%, 15%);
             }
+          }
+          .btn:ti {
+            background-color: #24c3ad;
           }
         }
       }
@@ -239,7 +306,7 @@ input[type="number"] {
         padding-bottom: 120px;
       }
       .reset-button {
-        background-color: #9fe8df;
+        background-color: #0d686d;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -255,9 +322,9 @@ input[type="number"] {
         }
       }
       .reset-button:hover {
-        background-color: #fff;
+        background-color: #24c3ad;
         p {
-          color: #1fc6ac;
+          color: #0d686d;
         }
       }
     }
