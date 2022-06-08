@@ -1,6 +1,7 @@
 <template>
   <main id="app">
     <MainView />
+    <p>create by <a href="">Frank CHU</a> </p>
   </main>
 </template>
 

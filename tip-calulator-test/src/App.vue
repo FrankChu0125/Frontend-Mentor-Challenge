@@ -1,19 +1,15 @@
 <template>
   <main id="app">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <MainView />
-    <btns />
+    <MainTipsCalulator />
   </main>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
-import MainView from "./views/MainView.vue";
+import MainTipsCalulator from "./views/MainTipsCalulator.vue";
 export default {
   name: "App",
   components: {
-    // HelloWorld,
-    MainView,
+    MainTipsCalulator,
   },
 };
 </script>
