@@ -38,7 +38,6 @@ export default {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 800px;
     color: #fff;
     .nav {
       display: flex;
