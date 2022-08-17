@@ -12,10 +12,10 @@ export default {
 
 <style lang="scss">
 .result-area {
-  margin: 30px 0px;
-  padding: 0px 20px;
+  margin: 18px 0px;
+  padding: 0px 15px;
   width: 500px;
-  height: 140px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;

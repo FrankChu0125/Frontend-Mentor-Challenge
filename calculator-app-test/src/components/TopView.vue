@@ -34,6 +34,7 @@ export default {
   align-items: center;
   p {
     font-size: 20px;
+    color: var(--theme1-title);
   }
   .theme {
     display: flex;
@@ -42,17 +43,20 @@ export default {
     .small-title {
       font-size: 10px;
       padding-top: 10px;
+      letter-spacing: 2px;
+      color: var(--theme1-min-title);
     }
     .selecter {
       .title {
         font-size: 10px;
         padding-left: 8px;
         word-spacing: 11px;
+        color: var(--theme1-choise);
       }
       .tabs {
         display: flex;
         position: relative;
-        background-color: var(--theme-one-circle-bg);
+        background-color: var(--theme1-circle-bg);
         border-radius: 99px;
         padding: 3px;
         * {
@@ -101,7 +105,7 @@ export default {
         display: flex;
         height: 18px;
         width: 18px;
-        background-color: var(--theme-one-circle);
+        background-color: var(--theme1-circle);
         z-index: 1;
         border-radius: 99px;
         transition: 0.25s ease-out;
